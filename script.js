@@ -21,16 +21,17 @@ function iterateThroughBooks(library) {
             <p>Pages: ${library[i].pages}</p>
             <p>Read: ${library[i].read}</p>
             <div id="options">
-                <button id="remove" 
-                onclick="return this.parentNode.parentNode.remove()">
+                <button onclick="return this.parentNode.parentNode.remove()">
                 Remove
                 </button>
-                <button id="read">Read</button>
+                </button>
+                <button onclick="readStatus(this.parentNode.previousElementSibling)">
+                Read
+                </button>
             </div>
         </div>
         `;
         shelf.insertAdjacentHTML("beforeend", book);
-        // Perform iteration action
     }
 }
 
@@ -46,13 +47,14 @@ submit.addEventListener("click", () =>{
         <p>Title: ${title}</p>
         <p>Author: ${author}</p>
         <p>Pages: ${pages}</p>
-        <p>Read: ${read}</p>
+        <p id="readField">Read: ${read}</p>
         <div id="options">
-        <button id="remove" 
-        onclick="return this.parentNode.parentNode.remove()">
+        <button onclick="return this.parentNode.parentNode.remove()">
         Remove
         </button>
-        <button id="read">Read</button>
+        <button onclick="readStatus(this.parentNode.previousElementSibling)">
+        Read
+        </button>
     </div>     
     </div>
     `;
@@ -62,6 +64,15 @@ submit.addEventListener("click", () =>{
     document.getElementById("read").value = "";
     shelf.insertAdjacentHTML("afterbegin", book);
 });
+
+function readStatus(e) {
+    if (e.innerHTML === "Read: No") {
+        e.innerHTML = "Read: Yes"
+    }
+    else {
+        e.innerHTML = "Read: No"
+    }
+}
 
 const hobbit = new Book("The Hobbit", "Tolkien", "255", "Yes");
 const pride = new Book("Pride and Prejudice", "Austen", "314", "Yes");
