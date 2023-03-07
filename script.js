@@ -21,8 +21,11 @@ function iterateThroughBooks(library) {
             <p>Pages: ${library[i].pages}</p>
             <p>Read: ${library[i].read}</p>
             <div id="options">
-                <button>Remove</button>
-                <button>Read</button>
+                <button id="remove" 
+                onclick="return this.parentNode.parentNode.remove()">
+                Remove
+                </button>
+                <button id="read">Read</button>
             </div>
         </div>
         `;
@@ -43,7 +46,14 @@ submit.addEventListener("click", () =>{
         <p>Title: ${title}</p>
         <p>Author: ${author}</p>
         <p>Pages: ${pages}</p>
-        <p>Read: ${read}</p>     
+        <p>Read: ${read}</p>
+        <div id="options">
+        <button id="remove" 
+        onclick="return this.parentNode.parentNode.remove()">
+        Remove
+        </button>
+        <button id="read">Read</button>
+    </div>     
     </div>
     `;
     document.getElementById("title").value = "";
