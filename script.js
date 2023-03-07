@@ -1,5 +1,5 @@
 const myLibrary = [];
-var shelf = document.getElementById("shelf");
+const shelf = document.getElementById("shelf");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -14,10 +14,12 @@ function addBookToLibrary(book) {
 
 function iterateThroughBooks(library) {
     for (let i = 0; i < library.length; i++) {
-        console.log(library[i]);
         const book = `
         <div class="books">
-            <p>${library[i].title}</p>
+            <p>Title: ${library[i].title}</p>
+            <p>Author: ${library[i].author}</p>
+            <p>Pages: ${library[i].pages}</p>
+            <p>Read: ${library[i].read}</p>
         </div>
         `;
         shelf.insertAdjacentHTML("beforeend", book);
@@ -25,8 +27,18 @@ function iterateThroughBooks(library) {
     }
 }
 
-// document.body.innerHTML = markup;
-// library[i].title;
+const submit = document.getElementById("submit");
+
+submit.addEventListener("click", () =>{
+    const title = document.getElementById("title").value;
+    const book = `
+    <div class="books">
+        <p>Title: ${title}</p>
+    </div>
+    `;
+    shelf.insertAdjacentHTML("afterbegin", book);
+});
+
 const hobbit = new Book("The Hobbit", "Tolkien", "255", "Yes");
 const pride = new Book("Pride and Prejudice", "Austen", "314", "Yes");
 const animal = new Book("Animal Farm", "Orwell", "157", "No");

@@ -3,5 +3,13 @@
     background-color: wheat;
     border-radius: 4px;
     display: flex;
+    flex-direction: column;
     margin: 2em;
+    padding-left: 1em;
+    width: min(15em, 200px);
+}
+
+#shelf {
+    display: flex;
+    flex-wrap: wrap;
 }
