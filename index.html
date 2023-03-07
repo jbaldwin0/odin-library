@@ -12,13 +12,17 @@
     <h1>My Library</h1>
     <form action="" onsubmit="return false;">
         <label for="title">Title</label><br>
-        <input type="text" id="title" value=""><br><br>
+        <input type="text" id="title" value="" pattern="[A-Z][a-z]*"
+        placeholder="Title"><br><br>
         <label for="author">Author</label><br>
-        <input type="text" id="author" value=""><br><br>
+        <input type="text" id="author" value="" pattern="[A-Z][a-z]*"
+        placeholder="Author"><br><br>
         <label for="pages">Pages</label><br>
-        <input type="text" id="pages" value=""><br><br>
-        <label for="read">Read</label><br>
-        <input type="text" id="read" value=""><br><br>
+        <input type="text" id="pages" value="" pattern="[0-9]*"
+        placeholder="#"><br><br>
+        <label for="read">Read?</label><br>
+        <input type="text" id="read" value="" pattern="^([Yy]es|[Nn]o)"
+        placeholder="Yes or No"><br><br>
         <input type="submit" id="submit" value="Submit">
       </form> 
     <div id="shelf">
