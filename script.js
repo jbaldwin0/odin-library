@@ -31,11 +31,21 @@ const submit = document.getElementById("submit");
 
 submit.addEventListener("click", () =>{
     const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const read = document.getElementById("read").value;
     const book = `
     <div class="books">
         <p>Title: ${title}</p>
+        <p>Author: ${author}</p>
+        <p>Pages: ${pages}</p>
+        <p>Read: ${read}</p>     
     </div>
     `;
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("pages").value = "";
+    document.getElementById("read").value = "";
     shelf.insertAdjacentHTML("afterbegin", book);
 });
 
