@@ -20,6 +20,10 @@ function iterateThroughBooks(library) {
             <p>Author: ${library[i].author}</p>
             <p>Pages: ${library[i].pages}</p>
             <p>Read: ${library[i].read}</p>
+            <div id="options">
+                <button>Remove</button>
+                <button>Read</button>
+            </div>
         </div>
         `;
         shelf.insertAdjacentHTML("beforeend", book);
